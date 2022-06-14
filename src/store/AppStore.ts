@@ -1,20 +1,20 @@
 import { create } from 'mobx-persist';
 import { enableStaticRendering } from 'mobx-react-lite';
 
-import CounterStore from '@/store/stores/CounterStore';
-import TestStore from '@/store/stores/TestStore';
+import CurrenciesStore from '@/store/stores/CurrenciesStore';
 
 enableStaticRendering(typeof window === 'undefined');
 
 const hydrate = create({});
 
 export default class AppStore {
-  counterStore = new CounterStore();
-  testStore = new TestStore();
+  currenciesStore = new CurrenciesStore();
 
   constructor() {
     if (typeof window !== 'undefined') {
-      hydrate(`counterStore`, this.counterStore); // if need hydrate
+      hydrate(`counterStore`, this.currenciesStore).then(() => {
+        this.currenciesStore.setIsHydrate(true);
+      });
     }
   }
 }

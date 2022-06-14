@@ -1,23 +1,25 @@
 import type { NextPage } from 'next';
 import { useEffect } from 'react';
+import { observer } from 'mobx-react-lite';
 
 import useStore from '@/hooks/useStore';
-import Counter from '@/components/pages/index/Counter/Counter';
 
 const Home: NextPage = () => {
   const {
-    testStore: { fetchPeople },
+    currenciesStore: { fetchCurrencies, currencies },
   } = useStore();
 
   useEffect(() => {
-    fetchPeople();
+    fetchCurrencies();
   }, []);
 
   return (
     <>
-      <Counter />
+      {currencies.map((currency) => {
+        return <p key={currency.ID}>{currency.ID}</p>;
+      })}
     </>
   );
 };
 
-export default Home;
+export default observer(Home);
