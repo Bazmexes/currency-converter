@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   return (
     <>
       {currencies.map((currency) => {
-        return <p key={currency.ID}>{currency.ID}</p>;
+        return <p>{currency.ID}</p>;
       })}
     </>
   );

@@ -1,0 +1,11 @@
+.h1 {
+  font-size: 64px;
+  line-height: 125%;
+  font-weight: 500;
+
+  @include tablet {
+    font-size: 32px;
+  }
+
+  color: red;
+}

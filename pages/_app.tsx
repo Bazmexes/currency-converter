@@ -1,4 +1,4 @@
-import '@/styles/globals.css';
+import '@/styles/custom-reset.scss';
 import type { AppProps } from 'next/app';
 
 import { StoreProvider } from '@/store/StoreProvider';

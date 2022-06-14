@@ -1,0 +1,60 @@
+@import "variables";
+
+@mixin laptop {
+  @media (max-width: $laptop-max) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet-max) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile-max) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin button-reset {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@mixin transition($args...) {
+  transition-property: $args;
+  transition-duration: .15s;
+  transition-timing-function: linear;
+}
+
+@mixin hover {
+  @media (min-width: $tablet-max) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin focus {
+  @media (min-width: $tablet-max) {
+    &:focus {
+      @content;
+    }
+  }
+}

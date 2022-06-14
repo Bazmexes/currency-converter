@@ -1,0 +1,73 @@
+@import "variables";
+@import "fonts";
+
+html {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  font-family: $font;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: $font;
+  font-weight: 400;
+  color: $color-text;
+  font-size: 16px;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.js-focus-visible *:focus:not(.focus-visible) {
+  outline: none;
+}
+
+.container {
+  max-width: 1176px;
+  margin: 0 auto;
+}
+
+.locked {
+  overflow: hidden;
+}
+
+.smooth-target {
+  transform: translateY(-100px);
+}
